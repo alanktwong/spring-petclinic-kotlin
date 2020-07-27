@@ -6,10 +6,10 @@ group = "org.springframework.samples"
 // Align with Spring Version
 version = "2.3.0.RELEASE"
 
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 plugins {
-    val kotlinVersion = "1.3.61"
+    val kotlinVersion = "1.3.72"
     id("org.springframework.boot") version "2.3.0.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     id("com.google.cloud.tools.jib") version "1.3.0"
@@ -20,11 +20,12 @@ plugins {
 val boostrapVersion = "3.3.6"
 val jQueryVersion = "2.2.4"
 val jQueryUIVersion = "1.11.4"
+val javaVersion = "11"
 
 tasks {
     withType<KotlinCompile> {
         kotlinOptions {
-            jvmTarget = "1.8"
+            jvmTarget = javaVersion
             freeCompilerArgs = listOf("-Xjsr305=strict")
         }
     }
